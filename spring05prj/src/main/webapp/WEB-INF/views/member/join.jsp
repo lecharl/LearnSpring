@@ -13,6 +13,7 @@
 		id : <input type="text" name="id"><br>
 		pwd : <input type="text" name="pwd"><br>
 		nick : <input type="text" name="nick"><br>
+		age : <input type="number" name="age"><br>
 		<input type="submit" value="가입">
 	</form>
 </body>

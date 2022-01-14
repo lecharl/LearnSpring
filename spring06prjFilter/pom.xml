@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.kh</groupId>
-	<artifactId>template</artifactId>
-	<name>springTemplate</name>
+	<artifactId>app06</artifactId>
+	<name>spring06prjFilter</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -116,14 +116,6 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>        
-		
-		<!-- DB -->
-		<!-- ojdbc8 -->
-		<dependency>
-		    <groupId>com.oracle.database.jdbc</groupId>
-		    <artifactId>ojdbc8</artifactId>
-		    <version>21.1.0.0</version>
-		</dependency> 
 	</dependencies>
     <build>
         <plugins>
