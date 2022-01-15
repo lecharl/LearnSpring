@@ -52,4 +52,16 @@
 		<beans:property name="dataSource" ref="dataSource"></beans:property>
 	</beans:bean>
 	
+	<!-- SqlSessionFactory -->
+	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dbcpSource"></beans:property>
+		<beans:property name="configLocation" value="classpath:/com/kh/app09/mybatis/mybatis-config.xml"></beans:property>
+		<beans:property name="mapperLocations" value=""></beans:property>
+	</beans:bean>
+	
+	<!-- sqlSessionTemplate -->
+	<beans:bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg index="0" ref="sqlSession"/>
+	</beans:bean>
+	
 </beans:beans>
