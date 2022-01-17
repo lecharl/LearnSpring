@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.kh.여기ㅣㅣㅣㅣㅣㅣ" />
+	<context:component-scan base-package="com.kh.app10" />
 	
 	
 	<!-- DB 설정 관련 -->
@@ -55,8 +55,9 @@
 	<!-- SqlSessionFactoryBean -->
 	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dbcpSource"></beans:property>
-		<beans:property name="configLocation" value="classpath:/여기ㅣㅣㅣ/mybatis/mybatis-config.xml"></beans:property>
-		<beans:property name="mapperLocations" value="classpath:/여기ㅣㅣㅣ/mybatis/**/*-mapper.xml"></beans:property>
+<!-- 		<beans:property name="configLocation" value="classpath:/com/kh/여기ㅣㅣ/mybatis/mybatis-config.xml"></beans:property> -->
+		<beans:property name="configLocation" value="classpath:/mybatis/mybatis-config.xml"></beans:property>
+		<beans:property name="mapperLocations" value="classpath:/mybatis/**/*-mapper.xml"></beans:property>
 	</beans:bean>
 	
 	<!-- sqlSessionTemplate -->
