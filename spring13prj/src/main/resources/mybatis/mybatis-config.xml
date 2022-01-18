@@ -9,8 +9,9 @@
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
+	<!-- 경로의 별칭 지정 -->
 	<typeAliases>
-		<!-- 경로의 별칭 지정 -->
-		<typeAlias type="com.kh.app10.menu.model.vo.MenuVo" alias="menuVo"/>
-	</typeAliases>
+		<typeAlias type="com.kh.app13.member.entity.MemberVo" alias="memberVo"/>
+	</typeAliases> 
+	
 </configuration>
