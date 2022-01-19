@@ -6,12 +6,13 @@
 	<settings>
 		<setting name="cacheEnabled" value="true"/>
 		<setting name="autoMappingBehavior" value="FULL"/>
-		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		<!-- <setting name="mapUnderscoreToCamelCase" value="true"/> -->
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
 	<!-- 경로의 별칭 지정 -->
 	<typeAliases>
 		<typeAlias type="com.kh.app13.member.entity.MemberVo" alias="memberVo"/>
+		<typeAlias type="com.kh.app13.member.entity.SearchVo" alias="searchVo"/>
 	</typeAliases> 
 	
 </configuration>

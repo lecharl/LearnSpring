@@ -15,6 +15,7 @@
 	<!-- 멤버를 조회(아이디&&패스워드 일치) : 아이디, 패스워드 전달받아야 됨 -->
 	<!-- 조회결과 돌려줘야됨 : MemberVo -->
 	<select id="selectMemberLogin" parameterType="memberVo" resultType="memberVo">
+<!-- 	<bind name="myVar" value=" '%#{nick}%'"></bind> -->
 		SELECT *
 		FROM MEMBER
 		
@@ -23,4 +24,43 @@
 		</if>
 		
 	</select>
+	
+	<!--  회원조회 -->
+	<!-- <select id="selectMemberSearch" parameterType="searchVo" resultType="memberVo"> -->
+	<select id="selectMemberSearch" parameterType="searchVo" resultMap="abc">
+		SELECT * FROM MEMBER
+		<!-- # : 옆에 '' 알아서 붙이기 또는 안붙이기 등 동적으로 처리함
+		예: #{searchValue} -> 'aa'
+		$ : 내가 입력한 그대로 
+		-->
+		<!-- <if test="searchType != null and searchValue != null">
+			<bind name="vvv" value=" '%' + searchValue + '%' "/>
+			WHERE ${searchType} like #{vvv}
+		</if> -->
+		
+		<!-- <choose>
+			<when test="searchType == 'id'">
+				WHERE ID = #{searchValue}
+			</when>
+			<when test="searchType eq 'nick'">
+				WHERE NICK = #{searchValue}
+			</when>
+			<otherwise>
+				WHERE ID = 'XXX' AND NICK = 'XXX'
+			</otherwise>
+		</choose> -->
+		
+		<!-- WHERE NICK
+		<foreach collection="viewData" item="datum" separator="," open="(" close=")">
+			#{datum}
+		</foreach> -->
+	</select>
+	<!-- 매번 별칭짓기 귀찮아서.. 왼쪽 디비컬럼이름이 오른쪽으로 변한다-->
+	<resultMap type="memberVo" id="abc">
+		<result column="ID" property="id"/>
+		<result column="PWD" property="pwd"/>
+		<result column="NICK" property="nick"/>
+		<result column="ENROLL_DATE" property="enrollDate"/>
+	</resultMap>
+	
 </mapper>
