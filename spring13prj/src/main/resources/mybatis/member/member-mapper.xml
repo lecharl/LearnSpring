@@ -38,6 +38,25 @@
 			WHERE ${searchType} like #{vvv}
 		</if> -->
 		
+    <!-- SELECT BOARD_NO, BOARD_TITLE, USER_ID, COUNT, CREATE_DATE
+    FROM BOARD B
+    JOIN MEMBER ON(BOARD_WRITER = USER_NO)
+    <trim prefix = "WHERE" prefixOverrides = "AND|OR">
+    	<choose>
+    		<when test="writer != null">
+	        	AND USER_ID LIKE '%' || #{writer} || '%'    		
+    		</when>
+    		<when test="title != null">
+	        	AND BOARD_TITLE LIKE '%' || #{title} || '%'
+    		</when>
+    		<when test="content != null">
+	        	AND BOARD_CONTENT LIKE '%' || #{content} || '%'
+    		</when>
+    	</choose>
+    <trim> -->
+
+
+		
 		<!-- <choose>
 			<when test="searchType == 'id'">
 				WHERE ID = #{searchValue}
