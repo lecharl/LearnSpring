@@ -33,10 +33,10 @@
 		예: #{searchValue} -> 'aa'
 		$ : 내가 입력한 그대로 
 		-->
-		<!-- <if test="searchType != null and searchValue != null">
+		<if test="searchType != null and searchValue != null">
 			<bind name="vvv" value=" '%' + searchValue + '%' "/>
 			WHERE ${searchType} like #{vvv}
-		</if> -->
+		</if>
 		
     <!-- SELECT BOARD_NO, BOARD_TITLE, USER_ID, COUNT, CREATE_DATE
     FROM BOARD B

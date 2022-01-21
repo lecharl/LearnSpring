@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="member">
+ <mapper namespace="member">
  	<insert id="insertMember" parameterType="memberDto">
  		INSERT INTO MEMBER 
  		VALUES(#{id}, #{pwd}, #{nick}, #{addr}, #{age}, SYSDATE)
@@ -54,5 +54,5 @@
  		<result column="AGE" property="age"/>
  		<result column="ENROLL_DATE" property="enrollDate"/>
  	</resultMap>
-	
-</mapper>
+ 	
+ </mapper>
