@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	<!-- select 가 아닌 dml(insert, delete, update)은 resultType==int 이다!! -->
+	<insert id="join" parameterType="memberDto">
+		INSERT INTO MEMBER
+		VALUES (#{id}, #{pwd}, #{nick}, #{addr}, #{age}, SYSDATE)
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="login" parameterType="memberDto" resultMap="mDto">
+		SELECT * FROM MEMBER
+		WHERE ID = #{id}
+	</select>
+	
+	<resultMap type="memberDto" id="mDto">
+		<result column="ID" property="id"/>
+ 		<result column="PWD" property="pwd"/>
+ 		<result column="NICK" property="nick"/>
+ 		<result column="ADDR" property="addr"/>
+ 		<result column="AGE" property="age"/>
+ 		<result column="ENROLL_DATE" property="enrollDate"/>
+	</resultMap>
+</mapper>
