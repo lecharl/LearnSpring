@@ -16,6 +16,8 @@
 	<%	}else{ %>
 			로그인 해주세요!
 			<a href="member/login">로그인페이지</a>
-	<%	} %>		
+	<%	} %>	
+	<br>
+	<a href="board/insert">게시글 등록</a>	
 </body>
 </html>

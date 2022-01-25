@@ -12,6 +12,7 @@
 	<!-- 경로의 별칭 지정 -->
 	<typeAliases>
 		<typeAlias type="com.kh.app15.member.entity.MemberDto" alias="memberDto"/>
+		<typeAlias type="com.kh.app15.board.entity.BoardDto" alias="boardDto"/>
 	
 	</typeAliases> 
 	

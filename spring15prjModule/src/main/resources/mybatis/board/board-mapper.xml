@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	<insert id="insert" parameterType="boardDto">
+		INSERT INTO BOARD
+		VALUES(#{title}, #{content}, #{writer})
+	</insert>
+	
+	<select id="selectAll" resultType="boardDto">
+		SELECT * FROM BOARD	
+	</select>
+	
+	<select id="selectOneByTitle" parameterType="string" resultType="boardDto">
+		SELECT * FROM BOARD
+		WHERE TITLE = #{zzztitle}
+		<!-- 단일데이터 string, int... 이기 때문에 #{} 안에 아무거나 써도 된다! -->
+	</select>
+	
+	<update id="update" parameterType="boardDto">
+		UPDATE BOARD
+		SET
+		CONTENT = #{content}
+		WHERE TITLE = #{title}
+	</update>
+	
+	<delete id="delete" parameterType="boardDto">
+		DELETE FROM BOARD
+		WHERE TITLE = #{title}
+	</delete>
+</mapper>

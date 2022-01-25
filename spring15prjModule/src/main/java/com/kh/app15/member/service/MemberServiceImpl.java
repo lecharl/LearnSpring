@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import com.kh.app15.member.entity.MemberDto;
 import com.kh.app15.member.repository.MemberRepositoryInterface;
 
-@Component
+//@Component
 public class MemberServiceImpl implements MemberServiceInterface{
 
 	@Autowired
