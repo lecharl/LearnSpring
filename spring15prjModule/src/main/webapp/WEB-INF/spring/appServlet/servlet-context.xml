@@ -68,4 +68,11 @@
 	<beans:bean id="pwdEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
 	
 	</beans:bean>	
+	
+	<!-- file -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+		<beans:property name="maxUploadSize" value="10000000"/> <!-- 1024 * 1024 * 10 == 10메가바이트 -->
+		<beans:property name="maxUploadSizePerFile" value="5000000"></beans:property>
+	</beans:bean>
 </beans:beans>

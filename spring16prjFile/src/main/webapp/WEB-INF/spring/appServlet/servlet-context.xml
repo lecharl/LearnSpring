@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.kh.app15" />
+	<context:component-scan base-package="com.kh.app16" />
 	
 	
 	<!-- DB 설정 관련 -->
@@ -74,5 +74,5 @@
 		<beans:property name="defaultEncoding" value="UTF-8"/>
 		<beans:property name="maxUploadSize" value="10000000"/> <!-- 1024 * 1024 * 10 == 10메가바이트 -->
 		<beans:property name="maxUploadSizePerFile" value="5000000"></beans:property>
-	</beans:bean>
+	</beans:bean>	
 </beans:beans>

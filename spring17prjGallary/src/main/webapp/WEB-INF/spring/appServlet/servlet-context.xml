@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.kh.app15" />
+	<context:component-scan base-package="com.kh.app17" />
 	
 	
 	<!-- DB 설정 관련 -->
