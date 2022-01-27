@@ -9,4 +9,6 @@ public interface GalleryRepository {
 	
 	//디비에 VO 저장
 	int upload(GalleryVo g);
+	
+	GalleryVo getGallery(int no);
 }

@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.kh</groupId>
-	<artifactId>app15</artifactId>
-	<name>spring15prjModule</name>
+	<artifactId>app18</artifactId>
+	<name>spring18prjLombok</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -181,7 +181,8 @@
 		    <version>1.18.22</version>
 		    <scope>provided</scope>
 		</dependency>
-				
+		
+		
 	</dependencies>
     <build>
         <plugins>
