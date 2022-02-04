@@ -24,6 +24,8 @@ public class CookieController {
 		//쿠키 준비
 		Cookie c = new Cookie("k01", "v01");
 		c.setPath("/");
+		c.setMaxAge(60 * 60 * 24);
+		//24시간 동안 보지 않기
 		
 		//쿠키 전달
 		response.addCookie(c);
