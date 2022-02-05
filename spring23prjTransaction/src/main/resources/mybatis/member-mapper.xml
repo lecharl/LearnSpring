@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test">
+ 	
+ 	<insert id="a">
+ 		INSERT INTO TEST_TB
+ 		VALUES('AAA')
+ 	</insert>
+
+ 	<insert id="b">
+ 		INSERT INTO TEST_TB
+ 		VALUES('BBBbbbbbbbbbbbb')
+ 	</insert>
+ 	
+ 	<!-- <resultMap type="memberDto" id="mDto">
+ 		<result column="ID" property="id"/>
+ 		<result column="PWD" property="pwd"/>
+ 		<result column="NICK" property="nick"/>
+ 		<result column="ADDR" property="addr"/>
+ 		<result column="AGE" property="age"/>
+ 		<result column="ENROLL_DATE" property="enrollDate"/>
+ 	</resultMap>
+	 -->
+</mapper>
