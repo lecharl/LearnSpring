@@ -10,10 +10,9 @@
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
 	<!-- 경로의 별칭 지정 -->
-	<!-- 
-	<typeAliases>
+	<!-- <typeAliases>
 		<typeAlias type="com.kh.app13.member.entity.MemberVo" alias="memberVo"/>
 	
-	</typeAliases> 
-	-->
+	</typeAliases>  -->
+	
 </configuration>

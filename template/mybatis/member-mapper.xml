@@ -45,7 +45,7 @@
  		</if> -->
  	</select>
  	
- 	
+ 	<!--
  	<resultMap type="memberDto" id="mDto">
  		<result column="ID" property="id"/>
  		<result column="PWD" property="pwd"/>
@@ -54,5 +54,5 @@
  		<result column="AGE" property="age"/>
  		<result column="ENROLL_DATE" property="enrollDate"/>
  	</resultMap>
-	
+	-->	
 </mapper>
