@@ -27,26 +27,46 @@ public class OpenApiContorller {
 		//json 데이터 파싱하기
 //		JsonElement jsonElem = JsonParser.parseString(result);
 		JsonObject resultObj = JsonParser.parseString(result).getAsJsonObject();
-		JsonObject responseObj = resultObj.getAsJsonObject("response");
+		
+		//3가지 방법
+		//resultObj.get("response") -> 리턴타입 : JsonElement
+//		JsonObject responseObj = resultObj.getAsJsonObject("response");
+		JsonObject responseObj = resultObj.get("response").getAsJsonObject();
+		System.out.println("responseObj : "+ responseObj);
+//		JsonObject responseObj = (JsonObject) resultObj.get("response");
         //"key"를 넣어주면 "value"를 뱉어낸다.
 		
+		JsonObject headerObj = responseObj.getAsJsonObject("header");
+		System.out.println("headerObj : "+ headerObj);
 		JsonObject bodyObj = responseObj.getAsJsonObject("body");
+		System.out.println("bodyObj : "+ bodyObj);
+		
+		//숫자여도 보통 String으로 받는다.
+		String totalCount = bodyObj.get("totalCount").getAsString();
+		System.out.println("totalCount : "+ totalCount);
+		
+		
 		//"items":[{}] -> 배열이므로
 		JsonArray items = bodyObj.getAsJsonArray("items");
 		
-		System.out.println(items);
+//		System.out.println(items);
 //		[{"clearVal":"65","sn":"249", ...
 		
 		//내가 원하는 것만
-		for(int i=0; i<items.size(); ++i) {
-			System.out.println(items.get(i));
-		}
+//		for(int i=0; i<items.size(); ++i) {
+//			System.out.println(items.get(i));
+//		}
 		
 		/*
 //		System.out.println(result);
+		//단순한 문자열
+//		{"response":{"body":{"totalCount":108, "item":[...."header"...
+ 
+//		System.out.println(resultObj);
+		//KEY값을 이용해서 값(데이터)을 꺼내올 수 있다!!!!
 //		{"response":{"body":{"totalCount":108, "item":[...."header"...
 		
-//		System.out.println(responseObj);
+		System.out.println(responseObj);
 //		{"body":{"totalCount":108,"items":[{"clearVal":...."header"...
 		
 		System.out.println(responseObj.getAsJsonObject("header"));
