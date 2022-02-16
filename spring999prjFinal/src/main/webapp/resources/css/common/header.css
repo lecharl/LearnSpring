@@ -4,12 +4,12 @@
 	margin:0 auto;
 }
 
-#div-header table tr td{
+/* #div-header table tr td{
     cursor:pointer;
 }
-
+ */
 #div-header table{
-	width: 80%;
+	width: 100%;
 	height: 100%;
 	text-align: center;
 	margin:0 auto;
@@ -25,4 +25,9 @@
 #div-main{
 	width:80vw;
 	margin: auto;
+}
+
+#div-header table img{
+	height: 100px;
+	width: 100px;
 }

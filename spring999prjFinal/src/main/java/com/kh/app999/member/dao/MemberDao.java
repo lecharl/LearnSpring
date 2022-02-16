@@ -11,5 +11,8 @@ public interface MemberDao {
 
 	void uploadProfile(MemberDto dto) throws Exception;
 
+	MemberDto getMember(MemberDto dto) throws Exception;
+
+	int updateMember(MemberDto dto) throws Exception;
 
 }

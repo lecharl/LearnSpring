@@ -27,5 +27,16 @@ public class MemberDaoImpl implements MemberDao{
 	public void uploadProfile(MemberDto dto) throws Exception {
 		sqlSession.insert("member.insertProfile", dto);
 	}
+
+	@Override
+	public MemberDto getMember(MemberDto dto) throws Exception {
+		
+		return sqlSession.selectOne("member.getMember", dto);
+	}
+
+	@Override
+	public int updateMember(MemberDto dto) throws Exception{
+		return sqlSession.update("member.updateMember", dto);
+	}
 	
 }

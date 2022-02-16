@@ -14,8 +14,8 @@
 		<h1>로그인 페이지</h1>
 	
 		<form action = "" method = "post">
-	        아이디 : <input type = "text" name = "id"/><br>
-	        비밀번호 : <input type = "password" name = "pwd"/><br>
+	        아이디 : <input type = "text" name = "userId"/><br>
+	        비밀번호 : <input type = "password" name = "userPwd"/><br>
 	        <input type = "submit" value ="로그인"/>
 	    </form>
 		
