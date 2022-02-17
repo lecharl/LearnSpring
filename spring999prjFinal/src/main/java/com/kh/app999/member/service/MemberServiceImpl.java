@@ -75,8 +75,12 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberDto login(MemberDto dto) throws Exception {
-		//DB에서 회원 정보 조회
+		//DB에서 회원 정보 조회(기준:id)
 		MemberDto dbUser = dao.getMember(dto);
+		//없는 id여도 에러 안나게
+		if(dbUser == null) {
+			return null;
+		}
 		
 		//비번 일치 체크
 		if(pe.matches(dto.getUserPwd(), dbUser.getUserPwd())) {
@@ -91,7 +95,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public MemberDto editMember(MemberDto dto) throws Exception {
 		//비밀번호 한번 더 확인..근데 여기선 패스
-		dto.setUserPwd(pe.encode(dto.getUserPwd()));
+		//비번을 입력했을 때만 수정 가능!!
+		if(dto.getUserPwd().length()>0) {
+			dto.setUserPwd(pe.encode(dto.getUserPwd()));
+		}
 		int result = dao.updateMember(dto);
 		MemberDto m = null;
 		if(result > 0) {

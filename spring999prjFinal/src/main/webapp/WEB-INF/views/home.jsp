@@ -9,7 +9,8 @@
 <body>
 
 	<%@ include file="/WEB-INF/views/common/header.jsp" %>
-	
+	<script type="text/javascript" src="${root}/resources/js/home.js"></script>
+
 	<div id="div-main">
 		<h1>홈페이지</h1>
 	</div>

@@ -24,7 +24,14 @@
 	<context:component-scan base-package="com.kh.app999" />
 	
 	
-
-	
+	<!-- interceptor 등록 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/notice/**"/>
+			<!-- list 만 제외, 일반회원은 list 볼 수 있어야 하니까 -->
+			<exclude-mapping path="/notice/list/**"/>
+			<beans:bean class="com.kh.app999.interceptor.NoticeInterceptor"></beans:bean>
+		</interceptor>
+	</interceptors>
 
 </beans:beans>

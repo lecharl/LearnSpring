@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:set var="root" value="${pageContext.request.contextPath}"/>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="${root}/resources/css/common/header.css">
 
 	<div id="div-header">
@@ -20,7 +20,7 @@
 				</c:if>
 			</tr>
 			<tr>
-				<td>메뉴1</td>
+				<td><a href="${root}/notice/list">공지사항</a></td>
 				<td>메뉴2</td>
 				<td>메뉴3</td>
 				<c:if test="${empty loginUser}">

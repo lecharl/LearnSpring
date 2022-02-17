@@ -14,6 +14,8 @@ public class ErrorProcessor {
 	public String errorProcess(Exception e) {
 		//서버도 예외를 알게하기
 		log.error(e.toString());
+		log.error(e.getMessage());
+		e.printStackTrace();
 		return "error/exception";
 	}
 }

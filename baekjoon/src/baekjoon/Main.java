@@ -6,43 +6,43 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		
 		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
-		int b = sc.nextInt();
-		int c = sc.nextInt();
-		int result = a*b*c;
-		System.out.println(result);
-		int[] reArr = new int[10];
+		int a = Integer.valueOf(sc.nextLine());
+		int[] scoreArr = new int[a];
 		
-		//숫자 하나씩 가져오기(숫자 그대로 하나씩 가져오기)
-		while(result != 0) {
-			//맨뒤부터, 맨뒤숫자 가져오고
-			int num = result % 10;
-			//없애기를 반복
-			result /= 10;
-			reArr[num]++;
-		}
+		for(int i=0; i<a; i++) {
+			//입력하기
+			String str = sc.nextLine();
+			
+			//잘라내기&담기
+			String[] strArr = str.split("");
+			
+			//현재score
+			int score = 0;
+			//이전score
+			int pastScore = 0;
+			//각합계score
+			int result = 0;
+			//총합계score
+			int allResult = 0;
+			//o면 +1 하기
+			for(int j=0; j<strArr.length; j++) {
+				if("O".equals(strArr[j])) {
+					score = 1;
+					pastScore = result;
+				}else {
+					score = 0;
+					pastScore = 0;
+				}
+				result = score+pastScore;
+				allResult += result;
+			}
+			scoreArr[i] = allResult;
+		}	
 		
-		
-		
-//		//숫자 하나씩 가져오기(문자열 charAt)
-//		String reStr = String.valueOf(a*b*c);
-//		int[] reArr = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-//		
-//		for(int i=0; i<reStr.length(); i++) {
-//			char num = reStr.charAt(i);	//내가 원하는 숫자
-//			//기록하기(int[10] reArr)
-//			//reArr[내가 가져온 숫자]++;
-//			reArr[Integer.valueOf(String.valueOf(num))]++;
-//		}
-		
-		//기록한 내용 출력
-		//System.out.println(reStr);
-		for(int x : reArr) {
-			System.out.println(x);
-		}
-
+		//출력
+		for(int sa : scoreArr)
+			System.out.println(sa);
 	}
 
 }

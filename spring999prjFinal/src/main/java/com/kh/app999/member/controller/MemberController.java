@@ -74,7 +74,13 @@ public class MemberController {
 	
 	//마이페이지 화면 보여주기
 	@GetMapping("mypage")
-	public String mypage() {
+	public String mypage(HttpServletRequest req, HttpSession session) {
+		MemberDto loginUser = (MemberDto) session.getAttribute("loginUser");
+		if(loginUser == null) {
+			req.setAttribute("msg", "로그인 하고 오세용!");
+			
+			return "error/errorPage";
+		}
 		return "member/mypage";
 	}
 	
