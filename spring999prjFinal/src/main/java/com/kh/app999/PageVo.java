@@ -19,7 +19,8 @@ public class PageVo {
 	private int endPage;	//마지막 페이지
 	private int lastPage;	//db의 row 기준으로 마지막 페이지는 몇페이지인지
 	
-	public PageVo(int currentPage, int cntPerPage, int pageBtnCnt, int totalRow) {
+	public PageVo(String currentPageStr, int cntPerPage, int pageBtnCnt, int totalRow) {
+		int currentPage = Integer.parseInt(currentPageStr);
 		this.currentPage = currentPage;
 		this.cntPerPage = cntPerPage;
 		this.pageBtnCnt = pageBtnCnt;
@@ -42,6 +43,11 @@ public class PageVo {
 		if(this.getCurrentPage() % this.getPageBtnCnt() > 0) {
 			endPage++;
 		}
+		
+		if(endPage > lastPage) {
+			endPage = lastPage;
+		}
+		
 		this.setEndPage(endPage * this.getPageBtnCnt());
 		
 		this.setStartPage(this.getEndPage() - this.getPageBtnCnt() + 1);

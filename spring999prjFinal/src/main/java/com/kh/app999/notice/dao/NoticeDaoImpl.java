@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kh.app999.PageVo;
 import com.kh.app999.notice.vo.NoticeVo;
 
 @Repository
@@ -20,13 +21,18 @@ public class NoticeDaoImpl implements NoticeDao{
 	}
 
 	@Override
-	public List<NoticeVo> getNoticeList() throws Exception {
-		return sqlSession.selectList("notice.getNoticeList");
+	public List<NoticeVo> getNoticeList(PageVo pageVo) throws Exception {
+		return sqlSession.selectList("notice.getNoticeList", pageVo);
 	}
 
 	@Override
 	public int deleteNotice(String[] delArr) throws Exception {
 		return sqlSession.update("notice.deleteNotice", delArr);
+	}
+
+	@Override
+	public int getNoticeCnt() throws Exception {
+		return sqlSession.selectOne("notice.getNoticeCnt");
 	}
 
 }

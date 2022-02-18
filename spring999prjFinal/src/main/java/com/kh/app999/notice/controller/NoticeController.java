@@ -28,17 +28,22 @@ public class NoticeController {
 	private NoticeService service;
 
 	//공지사항 화면 보여주기
-//	@GetMapping(value = {"/list/{page}", "/list"})
-//	public String list(Model model, @PathVariable(required=false) long page) throws Exception {
-	@GetMapping(value = "/list")
-		public String list(Model model) throws Exception {
-//		if(page == null) page = "1";
-//		
-//		//페이지vo 생성
-//		PageVo pageVo = service.getPageVo();
+//	@GetMapping(value = "/list")
+//		public String list(Model model) throws Exception {
+	@GetMapping(value = {"/list/{page}", "/list"})
+	public String list(Model model, @PathVariable(required=false) String page) throws Exception {
+		if(page == null) page = "1";
+		
+		//페이징 객체 필요함
+		int cntPerPage = 10; //한 페이지당 row10개씩 보여주기
+		int pageBtnCnt = 5;	//한번에 보여줄 페이지버튼 개수
+		int totalRow = service.getNoticeCnt();	//db에 있는 모든 row 개수
+		PageVo pageVo = new PageVo(page, cntPerPage, pageBtnCnt, totalRow);
+		
 		//리스트 조회
-		List<NoticeVo> list = service.getNoticeList();
+		List<NoticeVo> list = service.getNoticeList(pageVo);
 		model.addAttribute("list", list);
+		model.addAttribute("page", pageVo);
 		return "notice/list";
 	}
 	

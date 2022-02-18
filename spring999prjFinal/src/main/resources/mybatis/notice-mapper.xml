@@ -21,13 +21,22 @@
 		)
 		
 	</insert>
+	
  
  	<select id="getNoticeList" resultType="noticeVo">
- 		SELECT *
- 		FROM NOTICE n
- 		JOIN MEMBER m ON(n.WRITER = m.USER_NO)
- 		WHERE DEL = 'N'
- 		ORDER BY NO
+ 		SELECT * FROM
+ 		(
+	 		SELECT ROWNUM RN, T.*
+	 		FROM
+	 		(
+		 		SELECT *
+	 			FROM NOTICE N
+	 			JOIN MEMBER M ON (N.WRITER = M.USER_NO)
+	 			WHERE N.DEL = 'N'
+	 			ORDER BY N.NO
+	 		) T
+ 		)
+ 		WHERE RN BETWEEN #{startRow} AND #{endRow}
  	</select>
  	
  	<update id="deleteNotice" >
@@ -41,7 +50,16 @@
  		
  	</update>
  	
+ 	<select id="getNoticeCnt" resultType="int">
+ 		SELECT COUNT(NO)
+ 		FROM NOTICE
+ 		WHERE DEL = 'N'
  	
+ 	</select>
+ 		
+ 	
+
+
  	<!--
  	<resultMap type="memberDto" id="mDto">
  		<result column="ID" property="id"/>
