@@ -27,6 +27,11 @@
 			<!--  디스패처 서블릿이 처리하는 요청 -->
 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
 		</init-param>
+		<!-- advisor로 404 처리 -->
+		<init-param>
+			<param-name>throwExceptionIfNoHandlerFound</param-name>
+			<param-value>true</param-value>
+		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 		
